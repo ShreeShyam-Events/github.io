@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>shreeShyamEvents</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden; /* Hide scrollbars during the intro */
+            background-color: #f0f0f0; /* Background color */
+            font-family: 'Arial', sans-serif; /* Font style */
+        }
+        #intro {
+            position: fixed;
+            top: 0; 
+            left: 0; 
+            width: 100%; 
+            height: 100%;
+            display: flex; 
+            justify-content: center; 
+            align-items: center;
+            background-color: #000101; /* Background color */
+            z-index: 1000; /* Ensure it's above other content */
+            opacity: 1; 
+            transition: opacity 0.5s ease-out;
+        }
+        #logo {
+            font-size: 4em; /* Logo size */
+            font-weight: bold; /* Bold text */
+            color: #3867d6; /* White text */
+            text-shadow: 2px 2px 4px #000000; /* Text shadow */
+            transform: scale(0); /* Initial scale */
+            transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+            opacity: 0; /* Start as invisible */
+        }
+    </style>
+</head>
+<body>
+
+<div id="intro">
+    <div id="logo">श्रीShyamEvents</div>
+</div>
+
+<script>
+    const intro = document.getElementById('intro');
+    const logo = document.getElementById('logo');
+
+    // Fade in the logo
+    setTimeout(() => {
+        logo.style.opacity = 1;
+        logo.style.transform = 'scale(1)';
+    }, 500); // Delay before starting the animation
+
+    // Fade out the intro and remove it after 3 seconds
+    setTimeout(() => {
+        intro.style.opacity = 0;
+        setTimeout(() => intro.remove(), 500); // Remove after fade-out
+    }, 3000); // 3 seconds for the intro to be visible
+</script>
+
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <!-- <title>shreeShyam Event</title>-->
+    <link href="images/favicon.ico" rel="icon">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+    />
+
+    <!--font awesome-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <!--css file-->
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- header section starts  -->
+    <header class="header">
+      <a href="index.html" class="logo"><span>श्रीShyam</span>Events</a>
+
+      <nav class="navbar">
+        <a href="#home">home</a>
+        <a href="#service">service</a>
+        <a href="#about">about</a>
+        <a href="#gallery">gallery</a>
+       <!-- <a href="#price">price</a>-->
+        <a href="#review">review</a>
+        <a href="#contact">contact</a>
+      </nav>
+
+      <div id="menu-bars" class="fas fa-bars"></div>
+    </header>
+
+    <!--VIDEOOOO-->
+    <div class="video-container">
+      <video id="manpower-video" width="320" height="240" class="background-video" autoplay loop muted playsinline>
+          <source src="images/prs2.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+      </video>
+      <div class="video-overlay">
+          <div class="video-content">
+              <h4>Discover Our Manpower Management</h4>
+              <a href="https://docs.google.com/forms/d/e/1FAIpQLSdpF9ZtF-TZjx-CntzdGWz4HholpQ9cGMKEKGMWNpusGqyD9Q/viewform?usp=header" class="btn book-video-btn">Book Now</a>
+          </div>
+      </div>
+  </div>
+
+    <!-- home section starts  -->
+    <section class="home" id="home">
+      <div class="content">
+        
+        <div id="bookNowModal" class="modal">
+          <div class="modal-content">
+              <span class="close">&times;</span>
+              <h2>Book Your Event</h2>
+              <form id="bookNowForm" method="POST" action="book_now_handler.php">
+                  <div class="inputBox">
+                      <input type="text" name="full_name" placeholder="Full Name" required>
+                      <input type="email" name="email" placeholder="Email" required>
+                  </div>
+                  <div class="inputBox">
+                      <input type="tel" name="phone" placeholder="Phone Number" required>
+                      <select name="event_type" required>
+                          <option value="">Select Event Type</option>
+                          <option value="Wedding">Wedding</option>
+                          <option value="Birthday">Birthday</option>
+                          <option value="Corporate">Corporate Event</option>
+                          <option value="Other">Other</option>
+                      </select>
+                  </div>
+                  <div class="inputBox">
+                      <input type="date" name="event_date" required>
+                      <input type="number" name="guest_count" placeholder="Number of Guests" min="1" required>
+                  </div>
+                  <textarea name="additional_details" placeholder="Additional Details"></textarea>
+                  <input type="button" value="submit" class="btn">
+              </form>
+          </div>
+      </div>
+      </div>
+
+      <div class="swiper-container home-slider">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img src="images/social1.jpg" alt="" />
+          </div>
+          <div class="swiper-slide">
+            <img src="images/home1.jpg" alt="" />
+          </div>
+          <div class="swiper-slide">
+            <img src="images/home2.jpg" alt="" />
+          </div>
+          <div class="swiper-slide">
+            <img src="images/home3.jpg" alt="" />
+          </div>
+          <div class="swiper-slide">
+            <img src="images/home4.jpg" alt="" />
+          </div>
+          <div class="swiper-slide">
+            <img src="images/5.jpg" alt="" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+      <!-- service section starts  -->
+      <section class="service" id="service">
+        <h1 class="heading">our <span>services</span></h1>
+  
+        <div class="box-container">
+          <div class="box">
+            <i class="fas fa-laptop"></i>
+            <h3>Registration</h3>
+            <p>
+              Streamlined, efficient attendee registration processes for hassle-free events.
+            </p>
+          </div>
+  
+          <div class="box">
+            <i class="fas fa-barcode"></i>
+            <h3>Scanning</h3>
+            <p>
+              Quick and accurate scanning services for seamless guest verification.
+            </p>
+          </div>
+  
+          <div class="box">
+            <i class="fas fa-photo-video"></i>
+            <h3>photos and videos shoot</h3>
+            <p>
+              Capturing unforgettable moments with professional photography and videography.
+            </p>
+          </div>
+  
+          <div class="box">
+            <i class="fas fa-users"></i>
+            <h3>Guest Management</h3>
+            <p>
+              Ensuring personalized attention and smooth experiences for all guests.
+            </p>
+          </div>
+  
+          <div class="box">
+            <i class="fas fa-hammer"></i>
+            <h3>Production</h3>
+            <p>
+              Delivering high-quality event setups with innovative production solutions.
+            </p>
+          </div>
+  
+          <div class="box">
+            <i class="fas fa-map-marker-alt"></i>
+            <h3>Logistics</h3>
+            <p>
+              Coordinating flawless transportation and materials handling for efficient operations.
+            </p>
+          </div>
+  
+          <div class="box">
+            <i class="fas fa-handshake"></i>
+            <h3>Hospitality</h3>
+            <p>
+              Offering top-notch services to enhance comfort and satisfaction for attendees.
+            </p>
+          </div>
+  
+          <div class="box">
+            <i class="fas fa-hand"></i>
+            <h3>Halping Hand</h3>
+            <p>
+              Reliable and friendly on-ground support to manage event needs.
+            </p>
+          </div>
+        </div>
+      </section>
+
+    <!-- about section starts  -->
+    <section class="about" id="about">
+      <h1 class="heading"><span>about</span> us</h1>
+
+      <div class="row">
+        <div class="image">
+          <img src="images/about.jpg" alt="" />
+        </div>
+
+        <div class="content">
+          <h3>your occasion deserves our best Manpower</h3>
+          <p>
+            Welcome to Shree Shyam Events, your trusted partner in crafting exceptional events. We specialize in transforming your visions into seamless realities, managing every detail from corporate conferences to private celebrations with unmatched expertise and professionalism.
+          </p>
+          <p>
+            Our services go beyond traditional event management. We provide skilled manpower for efficient registration, precise scanning, professional photography and videography, guest management, logistics, production, hospitality, and reliable on-ground support.
+          </p>
+          <p>
+            What sets us apart is our commitment to innovation, customer satisfaction, and delivering unforgettable experiences. Our dedicated team works closely with clients to tailor services, ensuring every event exceeds expectations.
+          </p>
+          <p>
+            At Shree Shyam Events, we don’t just manage events—we create moments that connect, inspire, and leave lasting impressions.
+          </p>
+          <a href="" class="btn">reach us</a>
+        </div>
+      </div>
+    </section>
+
+        <!--our leaders-->
+
+<section class="leaders" id="leaders">
+  <h1 class="heading">our <span>leaders</span></h1>
+
+  <div class="box-container">
+      <div class="box">
+          <div class="image">
+              <img src="images/krish.jpg" alt="Founder">
+          </div>
+          <div class="content">
+              <h3>Krish Singh</h3>
+              <span>Founder</span>
+              <p>A visionary entrepreneur with over 15 years of experience in event management, Krish Singh has transformed ShreeShyam Events into a leading event planning company with innovative strategies and client-centric approaches.</p>
+          </div>
+      </div>
+
+      <div class="box">
+          <div class="image">
+              <img src="images/kuldeep2.jpg" alt="Co-Founder">
+          </div>
+          <div class="content">
+              <h3>Kuldeep Giri</h3>
+              <span>Co-Founder</span>
+              <p>A creative mastermind with a passion for design and coordination, kulpeed giri brings artistic excellence and meticulous planning to every event, ensuring unique and memorable experiences for our clients.</p>
+          </div>
+      </div>
+
+      <div class="box">
+          <div class="image">
+              <img src="images/amit.jpg" alt="Co-Founder">
+          </div>
+          <div class="content">
+              <h3>Amit Pandey</h3>
+              <span>Co-Founder</span>
+              <p>With extensive industry knowledge and strategic leadership, Amit pandey drives the company's growth, manages key client relationships, and ensures the highest standards of service and innovation.</p>
+          </div>
+      </div>
+  </div>
+</section>
+
+    <!-- gallery section starts  -->
+    <section class="gallery" id="gallery">
+      <h1 class="heading">our <span>gallery</span></h1>
+
+      <div class="box-container">
+        <div class="box">
+          <img src="images/1.jpg" alt="" />
+          <h3 class="title">best events</h3>
+          <div class="icons">
+            <a href="#" class="fas fa-heart"></a>
+            <a href="#" class="fas fa-share"></a>
+            <a href="#" class="fas fa-eye"></a>
+          </div>
+        </div>
+
+        <div class="box">
+          <img src="images/2.jpg" alt="" />
+          <h3 class="title">best events</h3>
+          <div class="icons">
+            <a href="#" class="fas fa-heart"></a>
+            <a href="#" class="fas fa-share"></a>
+            <a href="#" class="fas fa-eye"></a>
+          </div>
+        </div>
+
+        <div class="box">
+          <img src="images/3.jpg" alt="" />
+          <h3 class="title">best events</h3>
+          <div class="icons">
+            <a href="#" class="fas fa-heart"></a>
+            <a href="#" class="fas fa-share"></a>
+            <a href="#" class="fas fa-eye"></a>
+          </div>
+        </div>
+
+        <div class="box">
+          <img src="images/4.jpg" alt="" />
+          <h3 class="title">best events</h3>
+          <div class="icons">
+            <a href="#" class="fas fa-heart"></a>
+            <a href="#" class="fas fa-share"></a>
+            <a href="#" class="fas fa-eye"></a>
+          </div>
+        </div>
+
+        <div class="box">
+          <img src="images/5.jpg" alt="" />
+          <h3 class="title">best events</h3>
+          <div class="icons">
+            <a href="#" class="fas fa-heart"></a>
+            <a href="#" class="fas fa-share"></a>
+            <a href="#" class="fas fa-eye"></a>
+          </div>
+        </div>
+
+        <div class="box">
+          <img src="images/6.jpg" alt="" />
+          <h3 class="title">best events</h3>
+          <div class="icons">
+            <a href="#" class="fas fa-heart"></a>
+            <a href="#" class="fas fa-share"></a>
+            <a href="#" class="fas fa-eye"></a>
+          </div>
+        </div>
+
+        <div class="box">
+          <img src="images/7.jpg" alt="" />
+          <h3 class="title">best events</h3>
+          <div class="icons">
+            <a href="#" class="fas fa-heart"></a>
+            <a href="#" class="fas fa-share"></a>
+            <a href="#" class="fas fa-eye"></a>
+          </div>
+        </div>
+
+        <div class="box">
+          <img src="images/8.jpg" alt="" />
+          <h3 class="title">best events</h3>
+          <div class="icons">
+            <a href="#" class="fas fa-heart"></a>
+            <a href="#" class="fas fa-share"></a>
+            <a href="#" class="fas fa-eye"></a>
+          </div>
+        </div>
+
+        <div class="box">
+          <img src="images/social1.jpg" alt="" />
+          <h3 class="title">best events</h3>
+          <div class="icons">
+            <a href="#" class="fas fa-heart"></a>
+            <a href="#" class="fas fa-share"></a>
+            <a href="#" class="fas fa-eye"></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- price section starts 
+    <section class="price" id="price">
+      <h1 class="heading">our <span>pricing</span></h1>
+
+      <div class="box-container">
+        <div class="box">
+          <h3 class="title">basic</h3>
+          <h3 class="amount">$879.00</h3>
+          <ul>
+            <li><i class="fas fa-check"></i>full services</li>
+            <li><i class="fas fa-check"></i> decorations</li>
+            <li><i class="fas fa-check"></i> music and photos</li>
+            <li><i class="fas fa-check"></i> food and drinks</li>
+            <li><i class="fas fa-check"></i> invitation card</li>
+          </ul>
+          <a href="#" class="btn">check out</a>
+        </div>
+
+        <div class="box">
+          <h3 class="title">prime</h3>
+          <h3 class="amount">$799.00</h3>
+          <ul>
+            <li><i class="fas fa-check"></i>full services</li>
+            <li><i class="fas fa-check"></i> decorations</li>
+            <li><i class="fas fa-check"></i> music and photos</li>
+            <li><i class="fas fa-check"></i> food and drinks</li>
+            <li><i class="fas fa-check"></i> invitation card</li>
+          </ul>
+          <a href="#" class="btn">check out</a>
+        </div>
+
+        <div class="box">
+          <h3 class="title">luxury</h3>
+          <h3 class="amount">$379.00</h3>
+          <ul>
+            <li><i class="fas fa-check"></i>full services</li>
+            <li><i class="fas fa-check"></i> decorations</li>
+            <li><i class="fas fa-check"></i> music and photos</li>
+            <li><i class="fas fa-check"></i> food and drinks</li>
+            <li><i class="fas fa-check"></i> invitation card</li>
+          </ul>
+          <a href="#" class="btn">check out</a>
+        </div>
+
+        <div class="box">
+          <h3 class="title">ultra</h3>
+          <h3 class="amount">$920.00</h3>
+          <ul>
+            <li><i class="fas fa-check"></i>full services</li>
+            <li><i class="fas fa-check"></i> decorations</li>
+            <li><i class="fas fa-check"></i> music and photos</li>
+            <li><i class="fas fa-check"></i> food and drinks</li>
+            <li><i class="fas fa-check"></i> invitation card</li>
+          </ul>
+          <a href="#" class="btn">check out</a>
+        </div>
+      </div>
+    </section>
+  -->
+    <!-- review section starts  -->
+    <section class="reivew" id="review">
+      <h1 class="heading">client's <span>review</span></h1>
+
+      <div class="review-slider swiper-container">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide box">
+            <i class="fas fa-quote-right"></i>
+            <div class="user">
+              <img src="images/Screenshot 2024-12-13 220931.png" alt="" />
+              <div class="user-info">
+                <h3>Evenuefy</h3>
+                <span>happy customer</span>
+              </div>
+            </div>
+            <p>
+              "We’ve been working with Shree Shyam Events for over 3 years, and their team consistently delivers outstanding registration and scanning support. Reliable, professional, and always exceeding expectations. A valued partner for Evenuefy!"
+            </p>
+          </div>
+
+          <div class="swiper-slide box">
+            <i class="fas fa-quote-right"></i>
+            <div class="user">
+              <img src="images/Screenshot 2024-12-13 222047.png" alt="" />
+              <div class="user-info">
+                <h3>lisa</h3>
+                <span>happy customer</span>
+              </div>
+            </div>
+            <p>
+              "Neoniche appreciates Shree shreeshyamevents for their professionalism and precision in registration and scanning services and also helping hand . Their efficient execution has been a great support to our events, ensuring seamless experiences every time."
+
+            </p>
+          </div>
+
+          <div class="swiper-slide box">
+            <i class="fas fa-quote-right"></i>
+            <div class="user">
+              <img src="images/Screenshot 2024-12-13 222755.png" alt="" />
+              <div class="user-info">
+                <h3>mary</h3>
+                <span>happy customer</span>
+              </div>
+            </div>
+            <p>
+              "Foaid values shreeshyamevents for their exceptional logistics and hospitality manpower support. Their reliable team ensured smooth operations and enhanced guest experiences, contributing significantly to the success of our events."
+            </p>
+          </div>
+
+          <div class="swiper-slide box">
+            <i class="fas fa-quote-right"></i>
+            <div class="user">
+              <img src="images/Screenshot 2024-12-13 223155.png" alt="" />
+              <div class="user-info">
+                <h3>rose</h3>
+                <span>happy customer</span>
+              </div>
+            </div>
+            <p>
+              "Midaas Event Management is grateful for shreeshyamevents comprehensive support. From logistics to hospitality, their dedicated team ensured flawless execution, making our events seamless and highly successful every time."
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- contact section starts  -->
+    <section class="contact" id="contact">
+      <h1 class="heading"><span>contact</span> us</h1>
+
+      <form id="contact-form" method="post" action="https://script.google.com/macros/s/AKfycbxaZXIToYWO2tIwnkOrQU1YmYXR-evyb_jU9HtY4C91JRxtkgxKx-jJOOYBkdg2FTKm/exec">
+        <div class="inputBox">
+          <input type="text" name="your-name" placeholder="Name">
+          <input type="email" name="your-email" placeholder="Email">
+        </div>
+        <div class="inputBox">
+          <input type="text" name="your-number" placeholder="Number">
+          <input type="text" placeholder="subject" />
+        </div>
+        <textarea name="message" rows="7" placeholder="Your Message">
+        </textarea>
+        <input type="submit" id="submit"value="send message" class="btn">
+      </form>
+    </section>
+
+    <!-- footer section starts  -->
+    <section class="footer">
+      <div class="box-container">
+        <div class="box">
+          <h3>Service Provided</h3>
+          <a> <i class="fas fa-map-marker-alt"></i> MUMBAI </a>
+          <a> <i class="fas fa-map-marker-alt"></i>  bangalore</a>
+          <a> <i class="fas fa-map-marker-alt"></i> delhi </a>
+          <a> <i class="fas fa-map-marker-alt"></i> hyderabad </a>
+          <a> <i class="fas fa-map-marker-alt"></i> kolkata </a>
+          <a> <!-- href="#"> --> <i class="fas fa-map-marker-alt"></i> chennai </a>
+        </div>
+
+        <div class="box">
+          <h3>quick links</h3>
+          <a href="#"> <i class="fas fa-arrow-right"></i> home </a>
+          <a href="#"> <i class="fas fa-arrow-right"></i> service </a>
+          <a href="#"> <i class="fas fa-arrow-right"></i> about </a>
+          <a href="#"> <i class="fas fa-arrow-right"></i> gallery </a>
+         <!-- <a href="#"> <i class="fas fa-arrow-right"></i> price </a>-->
+          <a href="#"> <i class="fas fa-arrow-right"></i> reivew </a>
+          <a href="#"> <i class="fas fa-arrow-right"></i> contact </a>
+        </div>
+
+        <div class="box">
+          <h3>contact info</h3>
+          <a href="tel:+91 84258 42842"> <i class="fas fa-phone"></i> +91 84258 42842 </a>
+          <a href="tel:+91 87794 83389"> <i class="fas fa-phone"></i> +91 87794 83389 </a>
+          <a href="mailto:shreeshyamevents.business@gmail.com"> <i class="fas fa-envelope"></i>shreeshyamevents.business@gmail.com</a>
+          <a href="mailto:business.shreeshyamevents@gmail.com"> <i class="fas fa-envelope"></i> business.shreeshyamevents@gmail.com </a>
+          <a href="#">
+            <i class="fas fa-map-marker-alt"></i> MUMBAI, india - 400064
+          </a>
+        </div>
+
+        <div class="box">
+          <h3>follow us</h3>
+          <a href="#"> <i class="fab fa-facebook-f"></i> facebook </a>
+          <a href="#"> <i class="fab fa-twitter"></i> twitter </a>
+          <a href="https://www.instagram.com/shreeshyamevents.co.in?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="> <i class="fab fa-instagram"></i> instagram </a>
+          <!--<a href="#"> <i class="fab fa-linkedin-in"></i> linkedin </a>-->
+        </div>
+      </div>
+
+      <div class="credit">
+        created by <span>Nitin & Shubham</span> | all rights reserved
+      </div>
+    </section>
+
+    <!-- theme toggler  -->
+    <div class="theme-toggler">
+      <div class="toggle-btn">
+        <i class="fas fa-cog"></i>
+      </div>
+
+      <h3>choose color</h3>
+
+      <div class="buttons">
+        <div class="theme-btn" style="background: #ccff33"></div>
+        <div class="theme-btn" style="background: #d35400"></div>
+        <div class="theme-btn" style="background: #f39c12"></div>
+        <div class="theme-btn" style="background: #1abc9c"></div>
+        <div class="theme-btn" style="background: #3498db"></div>
+        <div class="theme-btn" style="background: #9b59b6"></div>
+      </div>
+    </div>--->
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
+    <!--JS file-->
+    <script src="app.js"></script>
+    <script src="googleSheet.js"></script>
+  </body>
+</html>
